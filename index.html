@@ -2,6 +2,16 @@
 <html>
 <head>
 	<title>Hunt Portfolio</title>
+
+	<script src="/js/jquery-2.2.3.min.js"></script>
+
+	<script>
+	$(document).ready(function() {
+		$("#btn").click(function() {
+			$("p").append("<b>Clicked</b>");
+		});
+	});
+	</script>
 </head>
 <body>
 
@@ -9,6 +19,9 @@
 <br>
 <br>
 <div align="center"><h1>Ye ye ye</h1></div>
+
+<button id="btn">Click me</button>
+<p></p>
 
 </body>
 </html>
