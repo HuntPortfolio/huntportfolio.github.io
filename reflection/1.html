@@ -29,15 +29,26 @@
 		</table>
 		</nav>
 
-		<h1>Apocalyptic, in a Sense.</h1>
-		<h1 class="book">by nathan hunt</h1>
+		<h1>Analytics</h1>
+		<h1 class="book">Criteria 1</h1>
 
 		<div style="text-align: justify;">
 
+		<p><h3>Student Learning Goal 1: Students write both to learn and to communicate what they learn.</h3>
+		<br>
+	 	Not completing this goal is almost impossible, however I searched for instances of "fluff" and passive voice.</p>
+	 	<p>For fluff, I used <a href="www.blablameter.com" target="_blank">BlahBlah Meter</a> to analyze all the polished works.  The site scans the text for empty words and awkward grammer and returns a number between 0 and 1 (<a href="http://backreaction.blogspot.com/2011/07/blablameter.html" target="_blanK">full explanation</a>).</p>
+
 		<canvas id="fluffChart" width="400" height="400"></canvas>
 
+		<p>I found that passive voice almost always correlated to an awkward or weakly-worded sentence.  Using passive voice isn't necessarily bad, however this graph visualizes how often it's used.</p>
+
+		<canvas id="passiveChart" width="400" height="400"></canvas>
+		<br><p style="float: left;"><a href="/reflection"><< Back</a></p>
+		<p style="float: right;"><a href="2.html">Prev >></a></p><br>
+
 		<script type="text/javascript">
-		var data = {
+		var fluffData = {
 			labels: ["Student 1", "Student 2", "Student 3", "Student 4", "Student 5", "Student 6", "Student 7", "Student 8", "Student 9", "Student 10", "Student 11", "Student 12", "Student 13", "Student 14", "Student 15", "Student 16"],
 			datasets: [{
 				label: 'Project 1',
@@ -54,11 +65,28 @@
 			}]
 		};
 
+		var passiveData = {
+			labels: ["Student 1", "Student 2", "Student 3", "Student 4", "Student 5", "Student 6", "Student 7", "Student 8", "Student 9", "Student 10", "Student 11", "Student 12", "Student 13", "Student 14", "Student 15", "Student 16"],
+			datasets: [{
+				label: 'Project 1',
+				backgroundColor: "rgba(152,162,174, 1)",
+				data: [8, 12, 8, 31, 15, 12, 16, 9, 19, 18, 11, 19, 9, 12, 20, 16]
+			}, {
+				label: 'Project 2',
+				backgroundColor: "rgba(40,133,141, 1)",
+				data: [36, 42, 28, 41, 56, 69, 27, 24, 0, 41, 13, 37, 28, 15, 46, 50]
+			}, {
+				label: 'Reflection',
+				backgroundColor: "rgba(36,64,86, 1)",
+				data: [13, 4, 9, 19, 14, 9, 4, 7, 0, 35, 6, 0, 3, 16, 8, 18]
+			}]
+		};
+
 		window.onload = function() {
-			var ctx = $("#fluffChart").get(0).getContext("2d");
-			window.myBar = new Chart(ctx, {
+			var fluffCtx = $("#fluffChart").get(0).getContext("2d");
+			window.fluffBar = new Chart(fluffCtx, {
             	type: 'bar',
-            	data: data,
+            	data: fluffData,
             	options: {
                 	elements: {
                     	rectangle: {
@@ -73,7 +101,30 @@
                 	},
                 	title: {
                     	display: true,
-                    	text: 'Fluff, Higher is more fluff'
+                    	text: 'Fluff'
+                	}
+            	}
+        	});
+
+        	var passiveCtx = $("#passiveChart").get(0).getContext("2d");
+        	window.passiveBar= new Chart(passiveCtx, {
+            	type: 'bar',
+            	data: passiveData,
+            	options: {
+                	elements: {
+                    	rectangle: {
+                        	borderWidth: 1,
+                        	borderColor: 'rgb(15, 15, 20)',
+                        	borderSkipped: 'bottom'
+                    	}
+                	},
+                	responsive: true,
+                	legend: {
+                    	position: 'top',
+                	},
+                	title: {
+                    	display: true,
+                    	text: 'Instances of Passive Voice'
                 	}
             	}
         	});

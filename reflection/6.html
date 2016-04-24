@@ -29,36 +29,58 @@
 		</table>
 		</nav>
 
-		<h1>Apocalyptic, in a Sense.</h1>
-		<h1 class="book">by nathan hunt</h1>
+		<h1>Analytics</h1>
+		<h1 class="book">Criteria 2</h1>
 
 		<div style="text-align: justify;">
 
-		<canvas id="fluffChart" width="400" height="400"></canvas>
+		<p></p>
+
+		<canvas id="numSourceChart" width="400" height="400"></canvas>
+		<canvas id="citationChart" width="400" height="400"></canvas>
+		<br><p style="float: left;"><a href="1.html"><< Back</a></p>
+		<p style="float: right;"><a href="3.html">Prev >></a></p><br>
 
 		<script type="text/javascript">
-		var data = {
+		var numSourceData = {
 			labels: ["Student 1", "Student 2", "Student 3", "Student 4", "Student 5", "Student 6", "Student 7", "Student 8", "Student 9", "Student 10", "Student 11", "Student 12", "Student 13", "Student 14", "Student 15", "Student 16"],
 			datasets: [{
 				label: 'Project 1',
 				backgroundColor: "rgba(152,162,174, 1)",
-				data: [0.17, 0.28, 0.15, 0.15, 0.25, 0.23, 0.17, 0.2, 0.15, 0.31, 0.35, 0.19, 0.3, 0.24, 0.26, 0.2]
+				data: [4,4,5,2,5,3,6,8,4,4,2,8,2,6,6,4]
 			}, {
 				label: 'Project 2',
 				backgroundColor: "rgba(40,133,141, 1)",
-				data: [0.37, 0.38, 0.42, 0.18, 0.34, 0.34, 0.36, 0.38, 0, 0.35, 0.35, 0.47, 0.22, 0.36, 0.26, 0.29]
+				data: [7,9,13,12,6,7,9,11,0,9,7,11,6,12,7,6]
 			}, {
 				label: 'Reflection',
 				backgroundColor: "rgba(36,64,86, 1)",
-				data: [0.33, 0.39, 0.34, 0.18, 0.39, 0.32, 0.26, 0.2, 0, 0.32, 0.33, 0, 0.32, 0.27, 0.33, 0.41]
+				data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}]
+		};
+
+		var citationData = {
+			labels: ["Student 1", "Student 2", "Student 3", "Student 4", "Student 5", "Student 6", "Student 7", "Student 8", "Student 9", "Student 10", "Student 11", "Student 12", "Student 13", "Student 14", "Student 15", "Student 16"],
+			datasets: [{
+				label: 'Project 1',
+				backgroundColor: "rgba(152,162,174, 1)",
+				data: [6, 4,7,2,5,5,6,0,1,5,4,10,2,8,5,10]
+			}, {
+				label: 'Project 2',
+				backgroundColor: "rgba(40,133,141, 1)",
+				data: [6,20,35,20,19,58,42,27,0,22,38,59,42,44,14,31]
+			}, {
+				label: 'Reflection',
+				backgroundColor: "rgba(36,64,86, 1)",
+				data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 			}]
 		};
 
 		window.onload = function() {
-			var ctx = $("#fluffChart").get(0).getContext("2d");
-			window.myBar = new Chart(ctx, {
+			var numSourceCtx = $("#numSourceChart").get(0).getContext("2d");
+			window.numSourceBar = new Chart(numSourceCtx, {
             	type: 'bar',
-            	data: data,
+            	data: numSourceData,
             	options: {
                 	elements: {
                     	rectangle: {
@@ -73,7 +95,30 @@
                 	},
                 	title: {
                     	display: true,
-                    	text: 'Fluff, Higher is more fluff'
+                    	text: 'Number of Sources'
+                	}
+            	}
+        	});
+
+        	var citationCtx = $("#citationChart").get(0).getContext("2d");
+        	window.citationBar= new Chart(citationCtx, {
+            	type: 'bar',
+            	data: citationData,
+            	options: {
+                	elements: {
+                    	rectangle: {
+                        	borderWidth: 1,
+                        	borderColor: 'rgb(15, 15, 20)',
+                        	borderSkipped: 'bottom'
+                    	}
+                	},
+                	responsive: true,
+                	legend: {
+                    	position: 'top',
+                	},
+                	title: {
+                    	display: true,
+                    	text: 'Number of Citations'
                 	}
             	}
         	});
