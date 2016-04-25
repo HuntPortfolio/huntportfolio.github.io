@@ -30,100 +30,17 @@
 		</nav>
 
 		<h1>Analytics</h1>
-		<h1 class="book">Criteria 2</h1>
+		<h1 class="book">Learning Goal 7</h1>
 
 		<div style="text-align: justify;">
 
-		<p></p>
+		<p><h3>Student Learning Goal 7: Students explore and represent their experiences, perspectives, and ideas in conversation with others.</h3><br>
+		Wikipedia talk pages, blackboard discussions, and review memos prove students shared their perspectives and ideas.</p>
 
-		<canvas id="numSourceChart" width="400" height="400"></canvas>
-		<canvas id="citationChart" width="400" height="400"></canvas>
-		<br><p style="float: left;"><a href="1.html"><< Back</a></p>
-		<p style="float: right;"><a href="3.html">Prev >></a></p><br>
+		<br><p style="float: left;"><a href="6.html"><< Back</a></p>
+		<p style="float: right;"><a href="8.html">Prev >></a></p><br>
 
-		<script type="text/javascript">
-		var numSourceData = {
-			labels: ["Student 1", "Student 2", "Student 3", "Student 4", "Student 5", "Student 6", "Student 7", "Student 8", "Student 9", "Student 10", "Student 11", "Student 12", "Student 13", "Student 14", "Student 15", "Student 16"],
-			datasets: [{
-				label: 'Project 1',
-				backgroundColor: "rgba(152,162,174, 1)",
-				data: [4,4,5,2,5,3,6,8,4,4,2,8,2,6,6,4]
-			}, {
-				label: 'Project 2',
-				backgroundColor: "rgba(40,133,141, 1)",
-				data: [7,9,13,12,6,7,9,11,0,9,7,11,6,12,7,6]
-			}, {
-				label: 'Reflection',
-				backgroundColor: "rgba(36,64,86, 1)",
-				data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-			}]
-		};
-
-		var citationData = {
-			labels: ["Student 1", "Student 2", "Student 3", "Student 4", "Student 5", "Student 6", "Student 7", "Student 8", "Student 9", "Student 10", "Student 11", "Student 12", "Student 13", "Student 14", "Student 15", "Student 16"],
-			datasets: [{
-				label: 'Project 1',
-				backgroundColor: "rgba(152,162,174, 1)",
-				data: [6, 4,7,2,5,5,6,0,1,5,4,10,2,8,5,10]
-			}, {
-				label: 'Project 2',
-				backgroundColor: "rgba(40,133,141, 1)",
-				data: [6,20,35,20,19,58,42,27,0,22,38,59,42,44,14,31]
-			}, {
-				label: 'Reflection',
-				backgroundColor: "rgba(36,64,86, 1)",
-				data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-			}]
-		};
-
-		window.onload = function() {
-			var numSourceCtx = $("#numSourceChart").get(0).getContext("2d");
-			window.numSourceBar = new Chart(numSourceCtx, {
-            	type: 'bar',
-            	data: numSourceData,
-            	options: {
-                	elements: {
-                    	rectangle: {
-                        	borderWidth: 1,
-                        	borderColor: 'rgb(15, 15, 20)',
-                        	borderSkipped: 'bottom'
-                    	}
-                	},
-                	responsive: true,
-                	legend: {
-                    	position: 'top',
-                	},
-                	title: {
-                    	display: true,
-                    	text: 'Number of Sources'
-                	}
-            	}
-        	});
-
-        	var citationCtx = $("#citationChart").get(0).getContext("2d");
-        	window.citationBar= new Chart(citationCtx, {
-            	type: 'bar',
-            	data: citationData,
-            	options: {
-                	elements: {
-                    	rectangle: {
-                        	borderWidth: 1,
-                        	borderColor: 'rgb(15, 15, 20)',
-                        	borderSkipped: 'bottom'
-                    	}
-                	},
-                	responsive: true,
-                	legend: {
-                    	position: 'top',
-                	},
-                	title: {
-                    	display: true,
-                    	text: 'Number of Citations'
-                	}
-            	}
-        	});
-		};	
-		</script>
+		
 		
 		</div>
 
